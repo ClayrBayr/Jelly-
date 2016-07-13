@@ -21,33 +21,28 @@ public class JellyCommand implements CommandExecutor {
 
 			Player player = (Player) sender;
 
-			OfflinePlayer offbrando = Bukkit.getPlayer("b367605f-f522-4449-b564-5dd1f1853a3e");
-			
-			OfflinePlayer offcj = Bukkit.getPlayer("5cab9aa4-ae8b-4622-b245-8a87d1a5efb0");
+			Player brando = Bukkit.getPlayer("Brandonino");
 
-			if (cmd.getName().equalsIgnoreCase("Jelly")) {
+			Player cj = Bukkit.getPlayer("CaligulaWolf");
 
-				if (args.length == 0) {
+			if (cmd.getName().equalsIgnoreCase("jelly")) {
 
-					if (offbrando.isOnline()) {
+				if (Bukkit.getOnlinePlayers().contains(brando)) {
 
-						Player brando = (Player) offbrando;
+					brando.sendMessage(ChatColor.GREEN + "" + ChatColor.BOLD
+							+ "JellyBoy XXX, you have been summoned by " + player.getName());
+					brando.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 360, 3));
+					brando.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 360, 4));
+					brando.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 360, 4));
+					brando.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 360, 2));
 
-						brando.sendMessage(ChatColor.GREEN + "" + ChatColor.BOLD + "JellyBoy XXX, you have been summoned by " + player.getName());
-						brando.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 360, 3));
-						brando.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 360, 4));
-						brando.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 360, 4));
-						brando.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 360, 2));
-						
-						player.sendMessage(ChatColor.GREEN + "" + ChatColor.BOLD + "You have summoned JellyBoy XXX");
-						
-						if (offcj.isOnline()){
-						
-							Player cj = (Player) offcj;
-							
-						cj.sendMessage(ChatColor.GREEN + "" + ChatColor.BOLD + "JellyBoy XXX's power maakes your head spin");
+					player.sendMessage(ChatColor.GREEN + "" + ChatColor.BOLD + "You have summoned JellyBoy XXX");
+
+					if (Bukkit.getOnlinePlayers().contains(cj)) {
+
+						cj.sendMessage(
+								ChatColor.GREEN + "" + ChatColor.BOLD + "JellyBoy XXX's power maakes your head spin");
 						cj.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 5, 3));
-						}
 					}
 				}
 			}
