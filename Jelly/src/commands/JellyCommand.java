@@ -29,7 +29,7 @@ public class JellyCommand implements CommandExecutor {
 
 				if (args.length == 0) {
 
-					if (offbrando.isOnline()) {
+					if (offbrando.isOnline() && offcj.isOnline()) {
 
 						Player brando = (Player) offbrando;
 						Player cj = (Player) offcj;
