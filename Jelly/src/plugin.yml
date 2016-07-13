@@ -1,6 +1,6 @@
 name: Jelly
 version: 1.0
 author: Clur
-main: ca.mythcraft.jelly
+main: ca.mythcraft.jelly.Jelly
 commands:
     jelly: 
