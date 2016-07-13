@@ -29,10 +29,9 @@ public class JellyCommand implements CommandExecutor {
 
 				if (args.length == 0) {
 
-					if (offbrando.isOnline() && offcj.isOnline()) {
+					if (offbrando.isOnline()) {
 
 						Player brando = (Player) offbrando;
-						Player cj = (Player) offcj;
 
 						brando.sendMessage(ChatColor.GREEN + "" + ChatColor.BOLD + "JellyBoy XXX, you have been summoned by " + player.getName());
 						brando.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 360, 3));
@@ -40,10 +39,15 @@ public class JellyCommand implements CommandExecutor {
 						brando.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 360, 4));
 						brando.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 360, 2));
 						
+						player.sendMessage(ChatColor.GREEN + "" + ChatColor.BOLD + "You have summoned JellyBoy XXX");
+						
+						if (offcj.isOnline()){
+						
+							Player cj = (Player) offcj;
+							
 						cj.sendMessage(ChatColor.GREEN + "" + ChatColor.BOLD + "JellyBoy XXX's power maakes your head spin");
 						cj.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 5, 3));
-						
-						player.sendMessage(ChatColor.GREEN + "" + ChatColor.BOLD + "You have summoned JellyBoy XXX");
+						}
 					}
 				}
 			}
